@@ -17,5 +17,5 @@ module.exports = (robot) ->
 "
     channel = getChannel(res)
     if channel.is_channel
-      res.reply 'ответил в личку'
+      res.reply 'Ответил в личку. А ещё про них можно почитать тут: http://lesswrong.ru/slack.'
     res.robot.messageRoom res.message.user.id, emojiHelp
