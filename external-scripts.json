@@ -6,5 +6,6 @@
   "hubot-pandapanda",
   "hubot-maps",
   "hubot-redis-brain",
+  "hubot-reload-scripts",
   "hubot-rules"
 ]
