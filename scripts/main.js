@@ -101,7 +101,7 @@ module.exports = robot => {
 
   robot.enter(
     (res) => {
-      if (getChannel(res).name == 'test') {
+      if (getChannel(res).name == 'announcements') {
         res.robot.messageRoom(res.message.user.id, texts.intro(res));
       }
     }
