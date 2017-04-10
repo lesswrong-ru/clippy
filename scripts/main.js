@@ -83,7 +83,7 @@ module.exports = robot => {
     /.*(emoji|эмоджи|эмодзи)/i,
     (res) => {
       if (getChannel(res).is_channel) {
-        res.reply('Ответил в личку. А ещё про них можно почитать тут: http://lesswrong.ru/slack.');
+        res.reply('Ответил в личку. А ещё про них можно почитать тут: http://lesswrong.ru/slack/emoji.');
       }
       res.robot.messageRoom(res.message.user.id, texts.emoji);
     }
