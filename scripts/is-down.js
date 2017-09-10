@@ -1,43 +1,38 @@
 module.exports = robot => {
 
-  const checkUrl = (msg, domain) => {
+  const checkUrl = (res, domain) => {
     robot.http(`http://downforeveryoneorjustme.com/${domain}`).get()(
-      (err, res, body) => {
+      (err, response, body) => {
         const up = `Странно. http://downforeveryoneorjustme.com/${domain} говорит, что всё работает.`;
         const down = `Паника! http://downforeveryoneorjustme.com/${domain} подтверждает, всё сломалось.`;
         let answer;
         if (body.indexOf("It's just you.") > 0) {
-          console.log('up!');
           answer = up;
         } else {
-          console.log('down!');
           answer = down;
         }
-        msg.send(answer);
+        res.send(answer);
       }
     );
   };
 
   const recognizeDomainByName = name => {
-    console.log(name);
     if (name.match(RegExp('(?:^|\\s+)(?:lesswrong\\.ru|http://lesswrong\\.ru|https://lesswrong\\.ru|лв|лв\\.ру|лвру|lw\\.ru)\\s*$', 'i'))) {
-      console.log('LW');
       return 'lesswrong.ru';
     }
     if (name.match(RegExp('(?:^|\\s+)(?:сайт\\s+кочерги|http://kocherga-club\\.ru|kocherga-club\\.ru)\\s*$', 'i'))) {
-      console.log('KCH');
       return 'kocherga-club.ru';
     }
     return;
   };
 
-  const cb = (msg) => {
-    const url = recognizeDomainByName(msg.match[1]);
+  const cb = (res) => {
+    const url = recognizeDomainByName(res.match[1]);
     if (!url) {
       return;
     }
 
-    checkUrl(msg, url);
+    checkUrl(res, url);
   };
 
   robot.hear(/(.*)\s+не\s+(?:грузится|открывается)/i, cb);
