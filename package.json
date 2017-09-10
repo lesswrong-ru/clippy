@@ -14,6 +14,7 @@
     "hubot-pandapanda": "^0.9.3",
     "hubot-redis-brain": "0.0.3",
     "hubot-reload-scripts": "^0.1.4",
+    "hubot-rules": "^0.1.2",
     "hubot-scripts": "^2.17.2",
     "hubot-slack": "^4.4.0"
   },
