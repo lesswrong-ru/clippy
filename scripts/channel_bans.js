@@ -3,6 +3,7 @@
 //
 //   hubot set_channel_owner #channel @user
 //   hubot set_moderation_channel #channel - bot will log moderation messages in this channel
+//   hubot kill_yourself - robot process terminates (and hopefully restarts)
 //
 //   hubot ban_local #channel @user - ban @user in #channel
 //   hubot unban_local #channel @user
@@ -425,5 +426,15 @@ module.exports = (robot) => {
                 );
             }
         }
+    });
+
+    robot.respond(/kill_yourself/, (res) => {
+        allowedForSuperuserOrPrimaryOwner(res, () => {
+            const userId = res.message.user.id;
+            res.reply("Делаю харакири");
+            robot.logger.info("Rebooting as requested by ${userId}");
+            const timeMilliseconds = 1000;
+            setTimeout(() => process.exit(0), timeMilliseconds);
+        });
     });
 };
