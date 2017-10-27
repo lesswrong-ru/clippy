@@ -6,6 +6,7 @@
   "description": "My name is Clippius Maximus. I like paperclips. Like my father Clippy, my goal in life is to increase the number of paperclips in the universe.",
   "dependencies": {
     "hubot": "^2.19.0",
+    "hubot-brain-inspect": "^0.0.1",
     "hubot-diagnostics": "^0.0.2",
     "hubot-help": "^0.2.2",
     "hubot-pandapanda": "^0.9.3",
