@@ -1,0 +1,13 @@
+[Unit]
+Description=Clippy bot for lesswrongru slack
+After=network.target
+
+[Service]
+User=berekuk
+Restart=on-failure
+WorkingDirectory=/srv/clippy
+EnvironmentFile=/srv/clippy/env
+ExecStart=/srv/clippy/bin/hubot --adapter slack
+
+[Install]
+WantedBy=multi-user.target
