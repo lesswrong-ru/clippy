@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=berekuk
-Restart=on-failure
+Restart=always
 WorkingDirectory=/srv/clippy
 EnvironmentFile=/srv/clippy/env
 ExecStart=/srv/clippy/bin/hubot --adapter slack
