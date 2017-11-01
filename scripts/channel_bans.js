@@ -82,8 +82,6 @@ module.exports = (robot) => {
                 channels.push(channel);
             });
         }
-        robot.logger.debug(`Returning from findOrCreateChannel: ${channel}`);
-        robot.logger.debug(`${Channel.prototype.isPrototypeOf(channel)}`);
         return channel;
     };
     
@@ -337,6 +335,10 @@ module.exports = (robot) => {
         const channelName = res.match[1];
         allowedForChannelOwnerAndSuperuser(res, channelName, () => {
             const user = robot.brain.userForName(res.match[2]);
+            if (user === undefined || user === null) {
+                res.reply(`There is no such user: '@${res.match[2]}'`);
+                return;
+            }
             const channel = findOrCreateChannel(channelName);
             if (channel.ban(user.id)) {
                 res.reply(`Banned ${mentionUser(user)} in #${channelName}`);
