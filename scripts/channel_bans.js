@@ -335,6 +335,10 @@ module.exports = (robot) => {
         const channelName = res.match[1];
         allowedForChannelOwnerAndSuperuser(res, channelName, () => {
             const user = robot.brain.userForName(res.match[2]);
+            robot.logger.debug(
+                `Executing ban_local, channelName = '${channelName}' ` +
+                `user = '${user}'`
+            );
             if (user === undefined || user === null) {
                 res.reply(`There is no such user: '@${res.match[2]}'`);
                 return;
