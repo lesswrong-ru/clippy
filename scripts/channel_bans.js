@@ -150,10 +150,13 @@ module.exports = (robot) => {
         // returns either a Channel object
         // (not Channel defined by me, but by node-slack-sdk)
         // or undefined if it does not exist
-        const channels = Object.values(
-            robot.adapter.client.rtm.dataStore.channels
-        );
-        return channels.find(predicate);
+        const client = robot.adapter.client;
+        if (client) {
+            const channels = Object.values(
+              client.rtm.dataStore.channels
+            );
+            return channels.find(predicate);
+        }
     };
 
     const getSlackApiChannelByName = (channelName) => {
@@ -401,7 +404,10 @@ module.exports = (robot) => {
             return;
         }
         const channelId = res.message.room;
-        //robot.logger.debug(`heard message in channel with id ${channelId}.`);
+        if (channelId == 'Shell') {
+          return;
+        }
+        // console.log(`heard message in channel with id ${channelId}.`);
         const channelSlackApi = getSlackApiChannelById(channelId);
         if (channelSlackApi === undefined || channelSlackApi === null) {
             // it may be undefined if it's a direct message
