@@ -1,6 +1,10 @@
 // Hubot documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-const getChannel = (res) => res.robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(res.message.room);
+const getChannel = (res) => {
+  if(res.robot.adapter.client) {
+    res.robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(res.message.room);
+  }  
+}
 
 const emoji = require('./emoji');
 
@@ -31,7 +35,8 @@ module.exports = robot => {
   robot.respond(
     /.*(emoji|эмоджи|эмодзи)/i,
     (res) => {
-      if (getChannel(res).is_channel) {
+      const channel = getChannel(res);      
+      if (channel && channel.is_channel) {
         res.reply('Ответил в личку. А ещё про них можно почитать тут: http://lesswrong.ru/slack/emoji.');
       }
       res.robot.messageRoom(res.message.user.id, texts.emoji);
