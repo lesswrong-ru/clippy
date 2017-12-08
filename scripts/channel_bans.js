@@ -56,7 +56,7 @@ const Channel = class Channel {
         this.bannedPeople.push(userId);
         return true;
     }
-}; 
+};
 
 module.exports = (robot) => {
     const modifyChannels = (func) => {
@@ -84,7 +84,7 @@ module.exports = (robot) => {
         }
         return channel;
     };
-    
+
     const setChannelOwner = (channelName, userId) => {
         // If the channel already exists, modifies its owner
         // otherwise creates it and sets owner
@@ -191,7 +191,7 @@ module.exports = (robot) => {
         );
         return undefined;
     };
-    
+
     const allowedForChannelOwnerAndSuperuser = (res, channelName, func) => {
         // Does something only if the user is the superuser
         // or the channel's owner
@@ -310,7 +310,7 @@ module.exports = (robot) => {
         }
         res.reply(message);
     });
-    
+
     robot.respond(/set_channel_owner #(.+) @(.+)/, (res) => {
         const channelName = res.match[1];
         allowedForChannelOwnerAndSuperuser(res, channelName, () => {
