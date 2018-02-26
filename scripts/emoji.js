@@ -63,6 +63,7 @@ const registry = [
       { code: 'steelman', description: 'антоним :fallacy_strawman:' },
       { code: 'taleb', description: 'это сообщение в стиле популярных книг про бизнес и успех' },
       { code: 'typo', description: 'сообщение написано с таким количеством орфографических или грамматических ошибок, что его неудобно читать' },
+      { code: 'x', description: 'удали превью' },
       { code: 'vanga', description: 'интуитивно предсказываю, что ... / интересное непонятно как полученное предсказание / неожиданно точное предсказание' },
       { code: 'heavy_check_mark', description: 'прочитал / принял к сведению' },
       { code: 'yudkowsky', description: 'как Боженька смолвил' },
