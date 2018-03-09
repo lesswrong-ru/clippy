@@ -23,6 +23,7 @@ const registry = [
       { code: 'possible_illegal', description: 'по моим представлениям, такие сообщения недопустимы в этом канале' },
       { code: 'rotating_coin', description: 'я готов поставить деньги на какую-то позицию / ты готов поставить деньги на то, что твое утверждение верно?' },
       { code: 'unpack', description: 'я не понимаю, распиши подробнее' },
+      { code: 'owl', description: 'какую задачу мы решаем?' },
     ]
   },
   {
@@ -52,6 +53,7 @@ const registry = [
       { code: 'captain-obvious', description: 'спасибо, Кэп' },
       { code: 'deal_with_it', description: 'ты тут ничего не можешь сделать, смирись / прими как есть' },
       { code: 'delta_dolphin', description: 'новая информация, которую бы лучше не узнавал' },
+      { code: 'dumb-owl', description: 'хмм, какая у тебя странная задача' },
       { code: 'double_facepalm', description: 'я не понимаю, как написавший такое сообщение человек смог научиться писать' },
       { code: 'facepalm', description: 'я не понимаю, как можно было написать такую чушь' },
       { code: 'glory_of_satan', description: 'данное сообщение угодно богам Хаоса' },
