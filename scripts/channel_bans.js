@@ -444,7 +444,7 @@ module.exports = (robot) => {
         allowedForSuperuserOrPrimaryOwner(res, () => {
             const userId = res.message.user.id;
             res.reply("Делаю харакири");
-            robot.logger.info("Rebooting as requested by ${userId}");
+            robot.logger.info(`Rebooting as requested by ${userId}`);
             const timeMilliseconds = 1000;
             setTimeout(() => process.exit(0), timeMilliseconds);
         });
