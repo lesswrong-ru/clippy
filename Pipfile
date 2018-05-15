@@ -6,7 +6,7 @@ name = "pypi"
 
 [packages]
 
-slappy = {git = "https://github.com/berekuk/slappy", editable = true}
+slappy = "*"
 
 [dev-packages]
 
