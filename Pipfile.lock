@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "678fad7b4d68f396f172dcdbabd1bbc2c434fe80510512722b14be595760254e"
+            "sha256": "50b0a0891f51095ebdc4349528fa95739943c0da604ca6ed18b5f700e23ac46a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -61,8 +61,7 @@
         },
         "futures": {
             "hashes": [
-                "sha256:9ec02aa7d674acb8618afb127e27fde7fc68994c0437ad759fa094a574adb265",
-                "sha256:ec0a6cb848cc212002b9828c3e34c675e0c9ff6741dc445cab6fdd4e1085d1f1"
+                "sha256:9ec02aa7d674acb8618afb127e27fde7fc68994c0437ad759fa094a574adb265"
             ],
             "markers": "python_version == '2.7'",
             "version": "==3.2.0"
@@ -134,9 +133,10 @@
             "version": "==1.1.0"
         },
         "slappy": {
-            "editable": true,
-            "git": "https://github.com/berekuk/slappy",
-            "ref": "91a4eb1299f29d2eb769caaf3f9a6bf4385f740a"
+            "hashes": [
+                "sha256:cc057dd1c8b1ef9daa0ccbf5e903d0784882813ab05a5d8bb33345ad26fa275f"
+            ],
+            "version": "==0.2.0"
         },
         "tzlocal": {
             "hashes": [
