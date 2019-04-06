@@ -4,11 +4,14 @@ from urllib.parse import urlparse
 
 from clippy.bot import bot
 
-def check_domain(msg, domain):
-    r = requests.get(f'http://downforeveryoneorjustme.com/{domain}')
+CHECKER = 'https://downforeveryoneorjustme.com'
 
-    up = f'Странно. http://downforeveryoneorjustme.com/{domain} говорит, что всё работает.'
-    down = f'Паника! http://downforeveryoneorjustme.com/{domain} подтверждает, всё сломалось.'
+def check_domain(msg, domain):
+    url = f'{CHECKER}/{domain}'
+    r = requests.get(url)
+
+    up = f'Странно. {url} говорит, что всё работает.'
+    down = f'Паника! {url} подтверждает, всё сломалось.'
 
     if "It's just you." in r.text:
         answer = up
