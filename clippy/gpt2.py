@@ -1,11 +1,12 @@
 import logging
 logger = logging.getLogger(__name__)
 
+import os
 import requests
 
 from clippy.bot import bot
 
-GPT2_HOST = os.environ['GPT2_HOST']
+GPT2_HOST = os.getenv('GPT2_HOST')
 
 
 @bot.respond_to(r'gpt2 ([\w\.:\- ]{3,150})$')
