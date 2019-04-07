@@ -9,8 +9,10 @@ import clippy.taleb
 import clippy.voice
 import clippy.welcome
 
+import os
+
 def main():
-    bot.run()
+    bot.run(port=os.getenv('PORT'))
 
 if __name__ == "__main__":
     main()
