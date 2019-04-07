@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "clippy"
+version = "0.1.0"
+description = ""
+authors = ["Vyacheslav Matyukhin <slava@kocherga-club.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+slappy = "<0.5"
+
+[tool.poetry.dev-dependencies]
