@@ -8,6 +8,7 @@ import clippy.random
 import clippy.taleb
 import clippy.voice
 import clippy.welcome
+import clippy.gpt2
 
 import os
 
