@@ -9,7 +9,7 @@ from clippy.bot import bot
 GPT2_HOST = os.getenv('GPT2_HOST')
 
 
-@bot.respond_to(r'gpt2 ([\w\.:\- ]{3,150})$')
+@bot.respond_to(r'gpt2 ([\w\.`~!@#$%^&*()\-+=:;\'",./\\№<> ]{3,150})$')
 def gpt2_respond(msg, text):
     if not GPT2_HOST:
         logger.warn('GPT2_HOST is not set up')
